@@ -1,49 +1,58 @@
 
-# MotoRaceReminders
+# Reminder App Frontend
 
-MotoRaceReminders is a one-stop shop for everything race related. In this app, you can browse through a variety of race series, read various information related to those races (such as start times, location, lap records, etc) and be able to follow/unfollow your favourite races which can then be view in the following tab of the application.
+This reminder app is used to showcase my full-stack abilities. This application allows users to register an account, sign in, and create/delete/edit/complete Tasks. The purpose of this application is for users to organize the tasks they have to do. When a task is nearing its due date, it will get added to the "Upcoming Tasks" list. When a task is complete, it will be added to the "Completed Tasks" list. Otherwise, the task will be added to the generic "Task" list. When users want to edit a task a modal will pop up with a prefilled form of the edited task, users can make any changes they want and the changes will be represented when the user commits those changes.  
 
 
  
 
 ## TechStack Used
 
-- React Frontend with Axios calls to the backend
-- Sass for Frontend Styling
-- React Router Dom used for Frontend Navigation
-- Node with Express Backend
-- Cors for Resource Sharing
-- DotEnv used for port information
+- Next.js/React Frontend with Axios calls to the backend
+- BootStrap for frontend styling 
+- react-datepicker used for datepicker functionality
+- react-responsive-modal used for modal functionality
+- Django with Django-rest-framework Backend 
+- MySQL DB that will store user and task information
+- JWT for authentication
+- CORS for Resource Sharing 
 
 
 ## Installation Instructions
 - Git Clone the Frontend and Backend Repo 
-- Create a .env file for backend with port=8080
+  
 - Dependencies for Frontend :
-    - React Router Dom
-    - Axios
-    - Sass
+    - react-datepicker
+    - react-responsive-modal
+    - bootstrap
+    - react-bootstrap
+    - axios
+    - next
+    - react
+    - react-dom
 - Dependencies for Backend:
-    - Express
-    - DotEnv
-    - Cors
+    - django-rest-framework
+    - cors
+    - PyJWT for cookies and auth
     
-## Lessons Learned and Next Steps
+## Architecture and Next Steps
 
-I learned throughout this project that good development leaves room for future development. This in turn will allow for faster iterations of the current code. Making clean and reuseable components makes development so much easier. Additionally taking the time to properly plan out the Frontend and Backend of an application will pay dividends when development actually starts
+For this project, I used a MVC architecture. The model is an SQL DB, specifically a MySQL DB. The view is strictly hosted on the front end and is user-facing. The controller (logic of the application) is on both the front end and the back end. Controller logic on the backend includes the register/sign-in logic through cookie delivery to the front end as well as the create/delete/edit/complete task functionality along with representing those changes in the Model and delivering all the tasks of a specific user to the front end. The Controller logic on the front end includes showing the login/register page or the Task page if the user is authenticated or not. Additionally, the front end includes logic to filter the Tasks into three categories. The first category is if the tasks are already completed, these tasks will get added to the "Completed Tasks" category. If the task due date is getting close to today's date then these tasks will get added to the "Upcoming Tasks" category. Finally, if a Task does not meet the requirements of the first two categories then the task will get added to the regular "Tasks" category. Additionally, the frontend includes logic to format the date in a specific format that the backend will accept. 
 
-Specific Challenges that I have faced throughout this project include managing state and having the functionality on buttons as well as data on the screen change because of it. For example I have a timer feature which lets the user know when the race is going to start and counts down from the current date and time to the races date and time. Figuring out this countdown feature was a challenge but I solved it using a useEffect hook. Another challenge I faced was having the follow and unfollow functionality on the same button and deciding when to do what feature. This required to me scan through the data asynchronously to see if the user is already following that specific race.  
-
-Next Steps for this project include setting up a DB for this app. It is currently reading and writing to JSON files because of time constraints. Additionally having user accounts and authentication so multiple user can use it at once. Furthermore include additonal data in the backend for other racing series (Only Formula 1 works currently).
-Another feature after all of the above are implemented is to have chat and stream feature so users can log in and watch their favourite races together in chatrooms. Also push notifications when a race is going to start so users get reminded and do not miss the races they are following. There are plenty more features, the ones mentioned are a few that come to mind that would enchance the user experience from this current version. 
+Next Steps for this project would be to have a more responsive front end. Right now it works for Desktop sizes. For future work, I will add a mobile view as well as a tablet view so users can comfortably use this application on any device. Additionally having a more robust form validation flow such as not letting users add a date in the past or an invalid date that does not follow the desired format will add value to the user experience. Also having some sort of email validation to not let users add emails that do not exist will be a plus, at this point, there is no email check and users can enter fake emails. This will also allow developers to implement reset password functionality which will send a reset link to the user's email. Furthermore having a user settings page on the front end will allow more control of the user's account. The final next step would be to implement some sort of routing feature on the front end. As the front end grows and additional pages are made the routing will allow the web application to behave like a typical website with back button functionality when users visit new pages, this was not needed for this version of the applications as there are not enough components/pages to make something like that worth it.   
 
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/40073550/218876733-8cd78c72-c975-48af-b41f-568b301d487a.png)
+![image](https://github.com/BlazeSlavkovski/ReminderAppFrontend/assets/40073550/147d10f6-15ef-4c0f-8aa7-b8835c2e06a0)
 
-![image](https://user-images.githubusercontent.com/40073550/218876815-42430df7-610a-406b-a834-9480d79023c0.png)
+![image](https://github.com/BlazeSlavkovski/ReminderAppFrontend/assets/40073550/7e58e299-45f9-4d86-800e-28a6e07984ba)
 
-![image](https://user-images.githubusercontent.com/40073550/218876873-9c088c69-4494-4463-9a40-83eed2efd61f.png)
+![image](https://github.com/BlazeSlavkovski/ReminderAppFrontend/assets/40073550/6699a716-f18b-40a8-9d46-8b528f5ed720)
 
-![image](https://user-images.githubusercontent.com/40073550/218876957-27973277-9434-435e-8548-b9c70aa84875.png)
+![image](https://github.com/BlazeSlavkovski/ReminderAppFrontend/assets/40073550/73571141-1943-4694-8bd2-de7fa94b95fd)
+
+![image](https://github.com/BlazeSlavkovski/ReminderAppFrontend/assets/40073550/becdde72-f9fb-4e1e-881d-ec34144309e2)
+
+![image](https://github.com/BlazeSlavkovski/ReminderAppFrontend/assets/40073550/1a33d0de-c9de-49cd-9373-ef25ab65bb4c)
+
