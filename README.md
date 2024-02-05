@@ -1,5 +1,5 @@
 
-# Reminder App Frontend
+# Reminder App
 
 This reminder app is used to showcase my full-stack abilities. This application allows users to register an account, sign in, and create/delete/edit/complete Tasks. The purpose of this application is for users to organize the tasks they have to do. When a task is nearing its due date, it will get added to the "Upcoming Tasks" list. When a task is complete, it will be added to the "Completed Tasks" list. Otherwise, the task will be added to the generic "Task" list. When users want to edit a task a modal will pop up with a prefilled form of the edited task, users can make any changes they want and the changes will be represented when the user commits those changes.  
 
